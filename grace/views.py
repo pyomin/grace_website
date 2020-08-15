@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Recommend
 from django.views.generic import ListView
+from django.contrib import auth
 
 
 class RecommendList(ListView):
@@ -19,3 +20,8 @@ def index(request):
             'recommends': recommends,
         }
     )
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/grace/')

@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('grace/', include('grace.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('', include('grace.urls'))
 ]
